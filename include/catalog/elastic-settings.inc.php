@@ -34,6 +34,24 @@
                         ],
                         'type' => 'custom',
                         'tokenizer' => 'standard'
+                    ],
+                    'default_search' => [
+                        'filter' => [
+                            'lowercase',
+                            'ascii_folding',
+                        ],
+                        'char_filter' => [
+                            'my_char_filter'
+                        ],
+                        'tokenizer' => 'standard'
+                    ]
+                ],
+                'char_filter' => [
+                    'my_char_filter' => [
+                        'type' => 'mapping',
+                        'mappings' => [
+                            '\u0027 => '
+                        ]
                     ]
                 ]
             ]
